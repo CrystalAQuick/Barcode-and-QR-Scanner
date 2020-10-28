@@ -6,20 +6,19 @@
 
 <img src="OpenApp.jpg" alt="drawing" width="200"/><img src="BeforeScan.jpg" alt="drawing" width="200"/><img src="AfterScan.jpg" alt="drawing" width="200"/>
 
-Create a new project 
-Install new libraries
+1. Create a new project 
 
-Gradle App level - Add a new dependency
+2. Install new libraries
+
+2.1. Gradle App level - Add a new dependency
     
      implementation 'com.journeyapps:zxing-android-embedded:3.4.0'
      
-Then sync your gradle file.
+2.2. Then sync your gradle file.
 
-You will also want to add permissions to your manifest file.
+3. You will also want to add permissions to your manifest file.
 
-In this case, add the permission to use the camera.
-
-This is needed in order to actaully scan the barcodes
+3.1. In this case, add the permission to use the camera. This is needed in order to actaully scan the barcodes
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
