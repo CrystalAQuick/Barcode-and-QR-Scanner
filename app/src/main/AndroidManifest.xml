@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
 
-        <!--   You will also need to include the second activity     -->
+        <!--   You will also need to include the second activity,
+        setting specific screen orientation     -->
         <activity android:name=".CapturedActivityInformation"
             android:screenOrientation="fullSensor"
             android:stateNotNeeded="true"
