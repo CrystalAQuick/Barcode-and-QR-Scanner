@@ -2,6 +2,9 @@
 
 ## How to create a barcode/QR scanner using ZXing
 
+<img src="Demo.gif" alt="drawing" />
+
+<img src="OpenApp.jpg" alt="drawing" width="200"/><img src="BeforeScan.jpg" alt="drawing" width="200"/><img src="AfterScan.jpg" alt="drawing" width="200"/>
 
 Create a new project 
 Install new libraries
@@ -16,20 +19,14 @@ You will also want to add permissions to your manifest file.
 
 In this case, add the permission to use the camera.
 
-This is needed in order to actaully scan the barcodes..
+This is needed in order to actaully scan the barcodes
 
-<uses-permission android:name="android.permission.CAMERA" />
-<uses-feature android:name="android.hardware.camera" />
-<uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
-
-You will also need to include the second activity within the application 
-tags. 
-
-In here, you can state the screen orientation, whether the state is needed or not and the input mode
-    
-    
-## Research
+        
+## Research / Useful Learning Resources
 
 https://zxing.github.io/zxing/apidocs/com/google/zxing/integration/android/IntentIntegrator.html
 
