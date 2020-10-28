@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Initiating an instance of IntentIntegrator
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);
-        intentIntegrator.setCaptureActivity(InformationReturnedFromScan.class);
+        // can be any activity, but it should handle intent extras
+        intentIntegrator.setCaptureActivity(CapturedActivityInformation.class);
         intentIntegrator.setOrientationLocked(false);
 
         // This will allow almost all barcode formats to be scanned.

@@ -6,5 +6,6 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.journeyapps.barcodescanner.CaptureActivity;
 
-public class InformationReturnedFromScan extends CaptureActivity {
+public class CapturedActivityInformation extends CaptureActivity {
+
 }
