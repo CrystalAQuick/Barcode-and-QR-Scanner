@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void scanItemCode(){
+        // This will call onActivityResult eventually.
+
         // IntentIntegrator is a utility class that allows integration using Intents
 
         // Initiating an instance of IntentIntegrator
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // This is the text that appears when you are trying to scan an item
         intentIntegrator.setPrompt("Scanning item");
 
-        // calling initiateScan
+        // This is what is initializing the scan
         intentIntegrator.initiateScan();
         Log.d("CQ - TESTING", "scanItemCode");
     }
@@ -58,15 +60,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null){
             if(result.getContents() != null) {
+                // This is a subclass of dialog, displays up to 3 buttons. (this just has exit and scan again)
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                // This is setting the message to be the number of the code that was scanned
                 builder.setMessage(result.getContents());
                 builder.setTitle("Scanned Item Results: ");
+
+                // Event if the person wants to scan an item again
+                // This will also calls the scanItem code again
                 builder.setPositiveButton("Scan again?", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         scanItemCode();
                         Log.d("CQ - TESTING", "onActivityResult - SCAN AGAIN");
                     }
+
+                    // This is just going to end the call
                 }).setNegativeButton("Exit?", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
