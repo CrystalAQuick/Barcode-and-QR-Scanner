@@ -35,9 +35,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void scanItemCode(){
-        // This will call onActivityResult eventually.
+        // This will call/redirect to onActivityResult eventually.
 
-        // IntentIntegrator is a utility class that allows integration using Intents
+        // IntentIntegrator is a utility class that allows integration
+        // of the barcode scanner using Intents
 
         // Initiating an instance of IntentIntegrator
         IntentIntegrator intentIntegrator = new IntentIntegrator(this);
@@ -51,7 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // This is the text that appears when you are trying to scan an item
         intentIntegrator.setPrompt("Scanning item");
 
-        // This is what is initializing the scan
+        // This is what is initializing the scan,
+        // this returns an Alter Dialog when done processing
         intentIntegrator.initiateScan();
         Log.d("CQ - TESTING", "scanItemCode");
     }
